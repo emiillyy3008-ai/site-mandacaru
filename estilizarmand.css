@@ -143,16 +143,16 @@ main {
 .imgcentral {
     display: block;
     width: 84%;
-    height: 510px;
+    max-width: 850px;
+    height: auto;
+    aspect-ratio: 16 / 10;
     object-fit: cover;
     margin: 35px auto;
-
     border: 10px solid #8A7D4C;
     outline: 3px solid #BDB77C;
     outline-offset: -12px;
     box-shadow: 9px 9px 0px #79864B;
 }
-
 
 main > article > img {
     display: block;
