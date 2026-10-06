@@ -4,19 +4,32 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #EEE9BF;
     color: #4D3920;
-    font-family:  Georgia, "Times New Roman", serif;
-    line-height: 3.7;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.7;
+    overflow-x: hidden;
 }
 
 .capa {
     background-image: url("imagens/pldfund.png");
-    height: 300px;
+    min-height: 300px;
+    height: auto;
     background-size: cover;
-    padding-top: 50px;
+    background-position: center;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
 .capa h1 {
     font-size: 50px !important;
     letter-spacing: 4px;
@@ -24,15 +37,14 @@ body {
     color: #362F22;
     text-shadow: 3px 3px 0px #BDB77C;
     margin-bottom: 5px;
-    
 }
-.capa h3{
-    color:#362F22;
+
+.capa h3 {
+    color: #362F22;
     text-shadow: 1px 1px 0px #BDB77C;
     font-size: 20px;
     font-style: italic;
     letter-spacing: 2px;
-
 }
 
 header {
@@ -44,65 +56,37 @@ header {
     box-shadow: 0 5px 15px rgba(120, 121, 63, 0.4);
 }
 
-
-
-
 nav {
-
     background-color: #362F22;
-
     display: flex;
-
     justify-content: center;
-
+    align-items: center;
     gap: 12px;
-
     padding: 15px;
-
     border-bottom: 4px solid #8A7D4C;
-
 }
 
 nav a {
-
     background-color: #BDB77C;
-
     color: #4D3920;
-
     border: 2px solid #EEE9BF;
-
     border-radius: 8px;
-
     padding: 9px 20px;
-
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: 16px;
-
     font-weight: bold;
-
     text-decoration: none;
-
     cursor: pointer;
-
     transition: 0.3s;
-    
     line-height: 1.2;
-
 }
 
 nav a:hover {
-
     background-color: #EEE9BF;
-
     color: #79864B;
-
     transform: translateY(-3px);
-
     box-shadow: 0 4px 8px rgba(121, 134, 75, 0.4);
-
 }
-
 
 main {
     width: 90%;
@@ -110,8 +94,8 @@ main {
     margin: 45px auto;
 }
 
-
 .card-principal {
+    width: 100%;
     background-color: #EEE9BF;
     border: 3px solid #79864B;
     padding: 40px 50px;
@@ -121,7 +105,6 @@ main {
     position: relative;
 }
 
-
 .card-principal::before {
     content: "༻───────── ⚜❊ ── ❊ ── ❊⚜─────────༺";
     display: block;
@@ -130,7 +113,6 @@ main {
     font-size: 25px;
     margin-bottom: 15px;
 }
-
 
 .card-principal h2 {
     color: #362F22;
@@ -143,13 +125,11 @@ main {
     border-bottom: 2px solid #BDB77C;
 }
 
-
 .card-principal p {
     font-size: 18px;
     text-align: justify;
     margin-bottom: 20px;
 }
-
 
 .card-principal p:first-of-type::first-letter {
     font-size: 55px;
@@ -160,25 +140,26 @@ main {
     color: #78793F;
 }
 
-
 .imgcentral {
     display: block;
     width: 84%;
-    height: 510px;
+    max-width: 850px;
+    height: auto;
+    aspect-ratio: 16 / 10;
     object-fit: cover;
     margin: 35px auto;
-
     border: 10px solid #8A7D4C;
     outline: 3px solid #BDB77C;
     outline-offset: -12px;
     box-shadow: 9px 9px 0px #79864B;
 }
 
-
 main > article > img {
     display: block;
     width: 100%;
-    height: 500px;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     margin: 35px auto;
     border: 7px solid #8A7D4C;
@@ -187,38 +168,30 @@ main > article > img {
     box-shadow: 8px 8px 0px #79864B;
 }
 
-
-main > article > img {
-    border: 7px solid #8A7D4C;
-    outline: 3px solid #BDB77C;
-    outline-offset: -12px;
-}
-
-
 .carrosel {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    gap: 15px;
     background-color: #79864B;
-    padding: 20px 10px;
-
+    padding: 20px 15px;
     border: 4px double #BDB77C;
     box-shadow: 7px 7px 0px #78793F;
-    flex-wrap: nowrap;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
 }
-
 
 .carrosel img {
     width: 200px;
     height: 152px;
+    min-width: 200px;
     object-fit: cover;
     border: 3px solid #EEE9BF;
     outline: 1px solid #BDB77C;
     flex-shrink: 0;
-    transition: 0.10s;
+    transition: 0.2s;
 }
 
 .carrosel img:hover {
@@ -226,10 +199,10 @@ main > article > img {
     border-color: #8A7D4C;
 }
 
-
 .carrosel button {
     width: 35px;
     height: 35px;
+    min-width: 35px;
     flex-shrink: 0;
     border: 2px solid #EEE9BF;
     background-color: #8A7D4C;
@@ -238,7 +211,7 @@ main > article > img {
     font-weight: bold;
     cursor: pointer;
     border-radius: 50%;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 .carrosel button:hover {
@@ -247,60 +220,234 @@ main > article > img {
     transform: scale(1.1);
 }
 
-
 @media (max-width: 1200px) {
 
     .carrosel {
-        gap: 5px;
+        gap: 10px;
     }
 
     .carrosel img {
-        width: 133px;
-        height: 85px;
+        width: 160px;
+        min-width: 160px;
+        height: 120px;
     }
 }
 
-
 @media (max-width: 800px) {
 
-    header h1 {
-        font-size: 38px;
+    .capa {
+        min-height: 240px;
+        padding: 40px 15px;
+    }
+
+    .capa h1 {
+        font-size: 38px !important;
+        letter-spacing: 2px;
+        line-height: 1.2;
+    }
+
+    .capa h3 {
+        font-size: 16px;
+        letter-spacing: 1px;
+        line-height: 1.4;
+    }
+
+    header {
+        padding: 25px 15px;
     }
 
     nav {
         flex-wrap: wrap;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 13px;
+        padding: 7px 10px;
+    }
+
+    main {
+        width: 94%;
+        margin: 30px auto;
     }
 
     .card-principal {
-        padding: 25px;
+        width: 100%;
+        padding: 25px 18px;
+    }
+
+    .card-principal::before {
+        content: "༻──── ⚜ ❊ ⚜ ────༺";
+        font-size: 20px;
     }
 
     .card-principal h2 {
         font-size: 25px;
+        line-height: 1.3;
     }
 
     .card-principal p {
         font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .card-principal p:first-of-type::first-letter {
+        font-size: 45px;
+    }
+
+    .imgcentral {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 10;
+        margin: 25px auto;
+        border: 6px solid #8A7D4C;
+        outline-offset: -10px;
+        box-shadow: 6px 6px 0px #79864B;
     }
 
     main > article > img {
-        height: 300px;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        margin: 25px auto;
+        border: 5px solid #8A7D4C;
+        outline-offset: -9px;
+        box-shadow: 6px 6px 0px #79864B;
     }
 
     .carrosel {
+        width: 100%;
         justify-content: flex-start;
-        overflow-x: auto;
+        gap: 10px;
         padding: 15px 10px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
     }
 
     .carrosel img {
-        width: 133px;
-        height: 85px;
+        width: 145px;
+        min-width: 145px;
+        height: 105px;
+        scroll-snap-align: center;
+    }
+
+    .carrosel button {
+        width: 32px;
+        min-width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .capa {
+        min-height: 210px;
+        padding: 30px 10px;
+    }
+
+    .capa h1 {
+        font-size: 29px !important;
+        letter-spacing: 1px;
+        line-height: 1.2;
+    }
+
+    .capa h3 {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    header {
+        padding: 20px 10px;
+    }
+
+    nav {
+        gap: 5px;
+        padding: 8px 5px;
+    }
+
+    nav a {
+        font-size: 11px;
+        padding: 6px 8px;
+        border-width: 1px;
+    }
+
+    main {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    .card-principal {
+        width: 100%;
+        padding: 20px 14px;
+    }
+
+    .card-principal::before {
+        content: "༻── ⚜ ❊ ⚜ ──༺";
+        font-size: 16px;
+    }
+
+    .card-principal h2 {
+        font-size: 21px;
+        line-height: 1.3;
+        margin-bottom: 18px;
+    }
+
+    .card-principal p {
+        font-size: 15px;
+        line-height: 1.55;
+    }
+
+    .card-principal p:first-of-type::first-letter {
+        font-size: 40px;
+    }
+
+    .imgcentral {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        margin: 20px auto;
+        border: 5px solid #8A7D4C;
+        outline: 2px solid #BDB77C;
+        outline-offset: -8px;
+        box-shadow: 5px 5px 0px #79864B;
+    }
+
+    main > article > img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        margin: 20px auto;
+        border: 4px solid #8A7D4C;
+        outline: 2px solid #BDB77C;
+        outline-offset: -7px;
+        box-shadow: 5px 5px 0px #79864B;
+    }
+
+    .carrosel {
+        width: 100%;
+        padding: 12px 8px;
+        gap: 8px;
+        border-width: 3px;
+        box-shadow: 5px 5px 0px #78793F;
+    }
+
+    .carrosel img {
+        width: 120px;
+        min-width: 120px;
+        height: 90px;
+        border-width: 2px;
     }
 
     .carrosel button {
         width: 30px;
+        min-width: 30px;
         height: 30px;
-        font-size: 16px;
+        font-size: 14px;
     }
 }
