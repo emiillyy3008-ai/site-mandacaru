@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilizabiom.css">
+    <title>Biomas</title>
+</head>
+<body>
+
+     </header>
+    <nav class="cabeçalho">
+         <a href="inicil.html">Início</a>
+        <a href="especies.html">Espécies</a>
+        <a href="curiosidade.html">Curiosidade</a>
+        <a href="inportancia.html">Importância</a>
+    </nav>
+
+    <section class="bioma_geral">
+        <div class="texto-biomas">
+            <h1>BIOMAS</h1>
+            <p>
+                O mandacaru (Cereus jamacaru),
+                uma planta nativa da Caatinga que apresenta grande capacidade de adaptação às condições de seca e às altas temperaturas.
+                Sua capacidade de captar e armazenar água permite que sobreviva durante longos períodos de estiagem,
+                tornando-o uma espécie importante para o equilíbrio dos ecossistemas e para as comunidades que vivem nessa região.
+            </p>
+        </div>
+
+        <div class="imagem-biomas">
+            <img src="imagens/Cerratinga_MAPA-1024x1005.png" height="350" width="400">
+        </div>
+
+        <button class="seta direita" onclick="proximaTela()">→</button>
+    </section>
+
+
+    <section class="caatingas">
+        <button class="seta esquerda" onclick="telaAnterior()">←</button>
+
+        <div class="caatinga">
+            <h1>Caatinga</h1>
+
+            <p>
+               A adaptação à Caatinga ocorre em um ambiente marcado pela baixa disponibilidade de água.
+
+               Nesse contexto, o mandacaru possui características que permitem sua sobrevivência mesmo 
+               durante períodos de seca. Segundo a Embrapa, as cactáceas desenvolveram adaptações ao ambiente árido, 
+               onde a água é um dos principais fatores limitantes.
+
+               Entre essas características está a capacidade de armazenar água nos tecidos. Além disso,
+               o caule e os espinhos ajudam na adaptação às condições do ambiente. Dessa forma, 
+               o mandacaru é um exemplo de adaptação vegetal ao clima semiárido.
+            </p>
+        </div>
+
+        <div class="imagem-caatinga">
+            <img src="imagens/CER-Mapa-Caatinga-1005x1024.png" height="350" width="400">
+        </div>
+
+        <button class="seta direita" onclick="proximaTela()">→</button>
+    </section>
+
+
+    <section class="cerrados">
+        <button class="seta esquerda" onclick="telaAnterior()">←</button>
+
+        <div class="cerrado">
+            <h1>Cerrado</h1>
+
+            <p>
+                Como o mandacaru vive no Cerrado?<br>
+
+                Ocorrência: O mandacaru consegue viver em solos secos e rochosos, presentes no Cerrado rupestre e em áreas mais secas.<br>
+
+                Aparência: Cresce em formato de candelabro e pode chegar a cerca de 6 metros. Seus caules verdes possuem costelas e espinhos.<br>
+
+                Sobrevivência: Seu caule armazena água, e o metabolismo CAM ajuda a economizá-la. Essas adaptações permitem sua sobrevivência durante a estiagem.<br>
+
+                Ecologia: Suas flores brancas abrem à noite e atraem morcegos e mariposas, que ajudam na polinização. Seus frutos também servem de alimento para animais.
+            </p>
+        </div>
+
+        <div class="imagem-cerrado">
+            <img src="imagens/CER-Mapa-Cerrado-1005x1024.png" height="350" width="400">
+        </div>
+    </section>
+
+
+    <script>
+
+        let telaAtual = 0;
+
+        const telas = document.querySelectorAll("section");
+
+        function mostrarTela(numero) {
+
+            telas.forEach((tela, index) => {
+
+                tela.classList.remove("ativa");
+
+                if (index === numero) {
+                    tela.classList.add("ativa");
+                }
+
+            });
+
+        }
+
+        function proximaTela() {
+
+            if (telaAtual < telas.length - 1) {
+                telaAtual++;
+                mostrarTela(telaAtual);
+            }
+
+        }
+
+        function telaAnterior() {
+
+            if (telaAtual > 0) {
+                telaAtual--;
+                mostrarTela(telaAtual);
+            }
+
+        }
+
+        mostrarTela(telaAtual);
+
+    </script>
+
+</body>
+</html>
+
+

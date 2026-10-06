@@ -1,0 +1,332 @@
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #EEE9BF;
+    color: #78793F;
+    font-family: "Playfair Display", serif;
+}
+
+
+nav {
+
+    background-color: #362F22;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 15px;
+
+    border-bottom: 4px solid #8A7D4C;
+
+}
+
+nav a {
+
+    background-color: #BDB77C;
+
+    color: #4D3920;
+
+    border: 2px solid #EEE9BF;
+
+    border-radius: 8px;
+
+    padding: 9px 20px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+nav a:hover {
+
+    background-color: #EEE9BF;
+
+    color: #79864B;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 4px 8px rgba(121, 134, 75, 0.4);
+
+}
+
+
+
+.titulo {
+    text-align: center;
+
+    padding: 70px 20px 55px;
+
+    background-color: #BDB77C;
+}
+
+
+.titulo h1 {
+    color: #362F22;
+    
+    font-size: 52px;
+
+    margin: 10px 0 15px;
+
+    font-weight: 600;
+}
+
+
+.titulo p:not(.decoracao) {
+    max-width: 650px;
+
+    margin: auto;
+
+       text-transform: uppercase;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: #4f4d2f;
+}
+
+
+.decoracao {
+    color: #EEE9BF;
+
+    font-size: 32px;
+}
+
+.curiosidades {
+    width: 85%;
+    max-width: 1200px;
+
+    margin: 60px auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+
+.card {
+    position: relative;
+
+    background-color: #EEE9BF;
+
+    border: 2px solid #BDB77C;
+
+    padding: 35px 30px 30px;
+
+    min-height: 260px;
+
+    transition: 0.3s;
+
+    box-shadow: 5px 5px 0 #8A7D4C;
+}
+
+
+.card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 8px 8px 0 #79864B;
+}
+
+
+.card.destaque {
+    background-color: #79864B;
+
+    color: #EEE9BF;
+
+    border-color: #79864B;
+}
+
+
+.card.destaque h2,
+.card.destaque p {
+    color: #EEE9BF;
+}
+
+
+.numero {
+    display: block;
+
+    color: #8A7D4C;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+
+.card.destaque .numero {
+    color: #BDB77C;
+}
+
+
+.card h2 {
+    color: #78793F;
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+
+    font-weight: 600;
+}
+
+
+.card p {
+    color: #4f4d2f;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+
+.fato {
+    width: 75%;
+    max-width: 900px;
+
+    margin: 80px auto;
+
+    text-align: center;
+
+    padding: 50px 30px;
+
+    background-color: #8A7D4C;
+
+    color: #EEE9BF;
+}
+
+
+
+
+.fato .pequeno {
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #BDB77C;
+
+    margin-bottom: 20px;
+}
+
+
+.fato h2 {
+    max-width: 700px;
+
+    margin: auto;
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    line-height: 1.4;
+}
+
+
+.fato p:last-child {
+    max-width: 650px;
+
+    margin: 20px auto 0;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+
+
+footer {
+    background-color: #78793F;
+
+    color: #EEE9BF;
+
+    text-align: center;
+
+    padding: 25px;
+
+    font-size: 14px;
+}
+
+
+
+@media (max-width: 900px) {
+
+    .curiosidades {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .cabecalho {
+        height: auto;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 20px;
+    }
+
+
+    nav {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    .titulo h1 {
+        font-size: 38px;
+    }
+
+
+    .curiosidades {
+        grid-template-columns: 1fr;
+
+        width: 90%;
+    }
+
+
+    .fato {
+        width: 90%;
+    }
+
+}
